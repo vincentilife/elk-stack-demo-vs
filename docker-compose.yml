@@ -1,0 +1,34 @@
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.0
+    environment:
+      - discovery.type=single-node
+    networks:
+      - elk_stack
+    ports:
+      - "9200:9200"
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.11.0
+    volumes:
+      - ./logstash-config/:/usr/share/logstash/pipeline/
+      # make sure to add the volume that is a valid path on your local machine here! [local path]:[container path]
+      - ./sample-data:/usr/share/logstash/sample-data
+    networks:
+      - elk_stack
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.11.0
+    networks:
+      - elk_stack
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+
+networks:
+  elk_stack:
+    driver: bridge
