@@ -11,3 +11,4 @@
 * Run `docker ps` to see all running containers (make sure you see the 3x ones for logstash, kibana, and elasticsearch)
 * Run `docker-compose restart` if you need to make any changes to the `docker-compose.yml` file (like pointing logstash to a different local dir to ingest data)
 * Go to Docker Desktop to view the logs for the 3x containers if needed (like making sure Logtash runs when there's a new csv in the ingestion directory)
+

@@ -4,3 +4,4 @@ timestamp,log_level,message
 2022-01-05T11:45:00,DEBUG,Function execution started
 2022-01-05T12:00:00,INFO,User registration successful
 2022-01-05T12:15:00,WARN,Invalid input detected
+

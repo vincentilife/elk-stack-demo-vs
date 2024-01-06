@@ -32,3 +32,4 @@ services:
 networks:
   elk_stack:
     driver: bridge
+
