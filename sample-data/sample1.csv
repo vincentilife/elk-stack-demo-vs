@@ -4,4 +4,3 @@ timestamp,log_level,message
 2022-01-05T10:30:00,DEBUG,Debugging information
 2022-01-05T10:45:00,INFO,User logged in
 2022-01-05T11:00:00,WARN,Warning: Disk space low
-
